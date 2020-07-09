@@ -2,11 +2,16 @@
 	<div>这是二儿子
 		{{value}}
 		<button @click="changeParent">儿子存钱</button>
+		<Sunzi2></Sunzi2>
 	</div>
 </template>
 <script>
 /* eslint-disable */
+import Sunzi2 from './Sunzi2'
 export default {
+	components:{
+		Sunzi2
+	},
 	 props:{
 		 value:{
 			  type:Number,

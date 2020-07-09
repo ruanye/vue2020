@@ -42,7 +42,8 @@ sudo npm install -g @vue/cli-service-global
 vue serve App.vue
 1. props 父传子   
 2. $attrs $listeners
-3. 自定义事件  $emit  $on   子传父   一家的存款都在一个卡里  儿子存钱了 账户也会发生变化  sync v-model 的使用  vue 中可以自定义事件 定义用on定义  触发自定义事件要使用emit   
+3. 自定义事件  $emit  $on   子传父   一家的存款都在一个卡里  儿子存钱了 账户也会发生变化  sync v-model 的使用  vue 中可以自定义事件 定义用on定义  触发自定义事件要使用emit
+4. $parent 和$children    
 ## 一.Props传递数据
 components
    ├── Grandson1.vue // 孙子1
