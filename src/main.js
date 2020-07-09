@@ -18,18 +18,32 @@ Vue.prototype.$dispatch = function (evnetname, val) {
  * @param {*} evnetname 事件名
  * @param {*} val  传递的值
  */
-Vue.prototype.$broadcast = function (eventname, val) {
-  const brodcast = function () {
-    let chilren = this.$children;
-   chilren.forEach((child) => {
-       child.$emit(eventname, val);
-      //如果儿子还有儿子 做个判断
+// Vue.prototype.$broadcast = function (eventname, val) {
+//   const brodcast = function () {
+//     let chilren = this.$children;
+//    chilren.forEach((child) => {
+//        child.$emit(eventname, val);
+//       //如果儿子还有儿子 做个判断
+//       if (child.$children) {
+//            brodcast.call(child, eventname, val);
+//       }
+//     });
+//   };
+//   brodcast.call(this, eventname, val);
+// };
+
+
+
+Vue.prototype.$broadcast = function $broadcast(eventName, data) {
+  const broadcast = function () {
+    this.$children.forEach((child) => {
+      child.$emit(eventName, data);
       if (child.$children) {
-           brodcast.call(child, eventname, val);
+        $broadcast.call(child, eventName, data);
       }
     });
   };
-  brodcast.call(this, eventname, val);
+  broadcast.call(this, eventName, data);
 };
 new Vue({
   render: (h) => h(App),

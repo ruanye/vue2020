@@ -2,7 +2,7 @@
 	<div>这是二儿子
 		{{value}}
 		<button @click="changeParent">儿子存钱</button>
-		<Sunzi2></Sunzi2>
+		<Sunzi2  @say='say'></Sunzi2>
 	</div>
 </template>
 <script>
@@ -19,6 +19,9 @@ export default {
 		 }
 	 },
 	methods:{
+			say(){
+		    console.log('我被通知了')
+		},
 		changeParent(){
 			//第一版触发方式 
 			 this.$emit('input',300)

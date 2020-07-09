@@ -1,6 +1,6 @@
 <template>
 	<div>这是第二个孙子
-		<button @click='change' @say='say'>二孙子存钱</button>
+		<button @click='change'>二孙子存钱</button>
 </div>
 </template>
 <script>
@@ -12,9 +12,7 @@ export default {
 		  // this.$parent.$emit('input',30000)
 		   this.$dispatch('input',50000)
 		},
-		say(){
-		    console.log('aa')
-		}
+	
 	}
 }
 </script>
