@@ -1,7 +1,8 @@
 <template>
   <div>
     在父组件 使用v-on 定义事件 事件会通过listenrs传递下 去
-    <Child @c="fn" name="我是谁"></Child>
+    <Child  @c="fn" name="我是谁"></Child>
+    <div ref ='mychild'></div>
     <!-- v-on 和emit   -->
     <!--  -->
     父亲的存款  {{money}} 
@@ -20,11 +21,22 @@
     </div>
 </template>
 <script>
+/* eslint-disable */
 import Child from "./Child";
 import Child2 from "./Child2";
+const s = Symbol()
 export default {
+   provide(){
+     return {
+       foo:'123',
+       app:this
+     }
+   },
   data(){
     return {money:100}
+  },
+  mounted(){
+    console.log(this.$refs.mychild)
   },
   components: {
 		Child,

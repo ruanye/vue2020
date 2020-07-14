@@ -13,6 +13,11 @@
 /* eslint-disable */
 import Sunzi from './Sunzi'
 export default {
+	data(){
+    return {
+			msg:'a'
+		}
+	},
 	 components: {
 		Sunzi
   }

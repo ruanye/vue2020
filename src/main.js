@@ -31,8 +31,8 @@ Vue.prototype.$dispatch = function (evnetname, val) {
 //   };
 //   brodcast.call(this, eventname, val);
 // };
-
-
+//创建一个公共的vue实例  
+Vue.prototype.$bus = new Vue()
 
 Vue.prototype.$broadcast = function $broadcast(eventName, data) {
   const broadcast = function () {

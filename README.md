@@ -43,7 +43,12 @@ vue serve App.vue
 1. props 父传子   
 2. $attrs $listeners
 3. 自定义事件  $emit  $on   子传父   一家的存款都在一个卡里  儿子存钱了 账户也会发生变化  sync v-model 的使用  vue 中可以自定义事件 定义用on定义  触发自定义事件要使用emit
-4. $parent 和$children    
+4. $parent 和$children   
+5. provide 和inject 依赖注入两个一起使用  允许组先级组件像子孙后代注入一个依赖（跨越多层次网上查找）  provide 提供一个对象   inject接受注入的数据 inject可以是数组 可以是对象   主要在开发高阶插件/组件库时使用。
+6. EventBus  一般用来解决同级通信  项目不大的情况下可以考虑使用 
+7. vuex 
+8. ref 写在组件上拿到的是组件实例 写在dom元素上拿到的是dom元素  
+  ref取值 this.$refs.ref对应的名字      
 ## 一.Props传递数据
 components
    ├── Grandson1.vue // 孙子1
@@ -171,7 +176,6 @@ Vue.prototype.$dispatch = function $dispatch(eventName, data) {
   }
 };
 既然能向上派发那同样可以向下进行派发
-
 #$broadcast
 Vue.prototype.$broadcast = function $broadcast(eventName, data) {
   const broadcast = function () {

@@ -13,6 +13,12 @@ export default {
 		   this.$dispatch('input',50000)
 		},
 	
+	},
+	mounted(){
+		//监听eventbus上面的事件 
+		this.$bus.$on('my',(data)=>{
+      console.log(data)
+		})
 	}
 }
 </script>
